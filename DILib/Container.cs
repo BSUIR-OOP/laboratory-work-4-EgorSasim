@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace DILib
 {
     // "NOT_CHOOSEN IS FOR FUTURE"
-    internal class Container
+    public class Container
     {
-        private List<NOT_CHOOSEN> serviceDescriptors;
-        public Container(List<NOT_CHOOSEN> serviceDescriptors)
+        private List<ServiceDescriptor> serviceDescriptors;
+        public Container(List<ServiceDescriptor> serviceDescriptors)
         {
             this.serviceDescriptors = serviceDescriptors;
         }
@@ -51,7 +51,7 @@ namespace DILib
 
             var implementation = Activator.CreateInstance(actualType, parameters);
 
-            if (descriptor.Lifetime == NOT_CHOOSEN.Singleton)
+            if (descriptor.Lifetime == ServiceLifetime.Singleton)
                 descriptor.Implementation = implementation;
 
 
