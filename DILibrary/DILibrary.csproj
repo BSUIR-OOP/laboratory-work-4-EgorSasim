@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Service.cs~RF18d69ab.TMP" />
+  </ItemGroup>
+
 </Project>

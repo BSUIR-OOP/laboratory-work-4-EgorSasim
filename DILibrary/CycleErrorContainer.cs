@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DILib
+namespace DILibrary
 {
     internal class CycleErrorContainer
     {
@@ -19,7 +20,7 @@ namespace DILib
             var serviceDependenceContainer = new Dictionary<string, List<string>>();
 
 
-            var services = System.Reflection.Assembly.GetExecutingAssembly().GetTypes()
+            var services = Assembly.GetExecutingAssembly().GetTypes()
                 .Where(t => String.Equals(t.Namespace, servicesNamespace, StringComparison.Ordinal))
                 .ToArray();
 
@@ -43,7 +44,7 @@ namespace DILib
 
             if (cycles.Count != 0)
             {
-                return "Cycle Error";
+                return "Cyclic Error";
             }
             else
                 return string.Empty;

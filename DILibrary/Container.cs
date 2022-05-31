@@ -4,9 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DILib
+namespace DILibrary
 {
-    // "NOT_CHOOSEN IS FOR FUTURE"
     public class Container
     {
         private List<ServiceDescriptor> serviceDescriptors;
@@ -30,7 +29,20 @@ namespace DILib
                .SingleOrDefault(x => x.ServiceType == serviceType);
 
             if (descriptor == null)
-                throw new Exception("Have no descriptor");
+                throw new Exception("NO DISCRIPTOR? \n" +
+                    "⣞⢽⢪⢣⢣⢣⢫⡺⡵⣝⡮⣗⢷⢽⢽⢽⣮⡷⡽⣜⣜⢮⢺⣜⢷⢽⢝⡽⣝\n" +
+                    "⠸⡸⠜⠕⠕⠁⢁⢇⢏⢽⢺⣪⡳⡝⣎⣏⢯⢞⡿⣟⣷⣳⢯⡷⣽⢽⢯⣳⣫⠇\n" +
+                    "⠀⢀⢀⢄⢬⢪⡪⡎⣆⡈⠚⠜⠕⠇⠗⠝⢕⢯⢫⣞⣯⣿⣻⡽⣏⢗⣗⠏\n" +
+                    "⠀⠪⡪⡪⣪⢪⢺⢸⢢⢓⢆⢤⢀⠀⠀⠀⠀⠈⢊⢞⡾⣿⡯⣏⢮⠷⠁\n" +
+                    "⠀⠀⠀⠈⠊⠆⡃⠕⢕⢇⢇⢇⢇⢇⢏⢎⢎⢆⢄⠀⢑⣽⣿⢝⠲⠉\n" +
+                    "⠀⠀⠀⠀⡿⠂⠠⠀⡇⢇⠕⢈⣀⠀⠁⠡⠣⡣⡫⣂⣿⠯⢪⠰⠂\n" +
+                    "⠀⠀⠀⠀⡦⡙⡂⢀⢤⢣⠣⡈⣾⡃⠠⠄⠀⡄⢱⣌⣶⢏⢊⠂\n" +
+                    "⠀⠀⠀⠀⢝⡲⣜⡮⡏⢎⢌⢂⠙⠢⠐⢀⢘⢵⣽⣿⡿⠁⠁\n" +
+                    "⠀⠀⠀⠀⠨⣺⡺⡕⡕⡱⡑⡆⡕⡅⡕⡜⡼⢽⡻⠏⠀\n" +
+                    "⠀⠀⠀⠀⣼⣳⣫⣾⣵⣗⡵⡱⡡⢣⢑⢕⢜⢕⡝\n" +
+                    "⠀⠀⠀⣴⣿⣾⣿⣿⣿⡿⡽⡑⢌⠪⡢⡣⣣⡟⠀\n" +
+                    "⠀⠀⠀⡟⡾⣿⢿⢿⢵⣽⣾⣼⣘⢸⢸⣞⡟\n" +
+                    "⠀⠀⠀⠀⠁⠇⠡⠩⡫⢿⣝⡻⡮⣒⢽⠋\n");
 
             if (descriptor.Implementation != null)
             {
@@ -41,7 +53,7 @@ namespace DILib
 
             if (actualType.IsAbstract || actualType.IsInterface)
             {
-                throw new Exception("Don't see abstract class or interface");
+                throw new Exception("Your abstract class or interfaces arnt in vision");
             }
 
             var constructorInfo = actualType.GetConstructors().First();
@@ -64,4 +76,3 @@ namespace DILib
         }
     }
 }
-

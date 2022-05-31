@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DILib
+namespace DILibrary
 {
     public static class CycleError
     {
@@ -59,4 +59,5 @@ namespace DILib
             return listDictionary.Keys.FindCycles(key => listDictionary.ValueOrDefault(key, null) ?? Enumerable.Empty<T>());
         }
     }
+
 }

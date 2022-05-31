@@ -1,6 +1,6 @@
-﻿using DILib;
+﻿using DILibrary;
 
-namespace lb4
+namespace Laba4OOP // Note: actual namespace depends on the project name.
 {
     internal class Program
     {
@@ -37,8 +37,8 @@ namespace lb4
             {
                 Console.WriteLine(ex.Message);
             }
-
-
+           
+            
         }
     }
 }
